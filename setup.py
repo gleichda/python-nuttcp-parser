@@ -34,7 +34,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    py_modules=['nuttcp-parser'],
+    py_modules=['nuttcp_parser'],
     keywords='owping network ping',
     project_urls={
         'Tracker': 'https://github.com/mirgleich/python-nuttcp-parser/issues',
