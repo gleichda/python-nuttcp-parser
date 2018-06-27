@@ -24,7 +24,7 @@ class Parser():
             rtt = float(rest[8])
         else:
             dropped = int(rest[6])
-            pakets = int(rest[8])
+            packets = int(rest[8])
             loss = float(rest[10])
         result = NUTTCPResult(protocol)
         result.summary['transmitted_MB'] = transmitted_MB
@@ -39,7 +39,7 @@ class Parser():
             result.summary['RTT'] = rtt
         else:
             result.summary['dropped'] = dropped
-            result.summary['pakets'] = pakets
+            result.summary['packets'] = packets
             result.summary['loss'] = loss
         return result
 
@@ -52,4 +52,4 @@ class NUTTCPResult():
         if self.protocol == 'tcp':
             self.summary = dict.fromkeys(['duration', 'transmitted_MB', 'speed_Mbs', 'RX', 'TX', 'retrans', 'RTT'])
         else:
-            self.summary = dict.fromkeys(['duration', 'transmitted_MB', 'speed_Mbs', 'RX', 'TX', 'dropped', 'pakets', 'loss'])
+            self.summary = dict.fromkeys(['duration', 'transmitted_MB', 'speed_Mbs', 'RX', 'TX', 'dropped', 'packets', 'loss'])
